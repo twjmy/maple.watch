@@ -157,7 +157,7 @@ var PingModel = function(servers) {
 var GameServer = function(version, timeOffset, icons, servers) {
     return {
         name: "Game Servers",
-        description: "These are the MapleStory " + version + " game servers.",
+        description: "這是楓之谷 " + version + " 伺服器列表",
         selectedServers: ko.observable(loadingArr),
         icons: icons,
         timeOffset: timeOffset,
@@ -9422,7 +9422,7 @@ function UpdateSelectedServers(parent, index, name) {
         window.clearInterval(loadingTimers[index]);
     }
 
-    if (parent.name == "Game Servers" && !clockTicking) {
+    if (parent.name == "遊戲伺服器" && !clockTicking) {
         clockTicking = true;
         setInterval(function() {
             var d = new Date(),
