@@ -25,7 +25,7 @@
 				<a href="./" data-bind="click: function() { if (window.stop) { window.stop(); } else if (document.execCommand) { document.execCommand('Stop'); }; window.location.href = './'; }">maple.watch</a>
 			</div>
 			<div class="select" style="display:none" data-bind="visible: true">
-				<span class="select-text">Select a MapleStory version:</span>
+				<span class="select-text">選擇你的楓之谷伺服器:</span>
 				<ul data-bind="foreach: versions">
 					<li data-bind="css: { active: abbr == $root.selected() }">
 						<a href="#" role="button" data-bind="attr: { href: available ? '#' + abbr + '-' + $root.getDefaultSubSelectionForVersion(abbr) : '', title: available ? name : 'Coming Soon!' }, css: { disabled: !available }, click: function() { if (available) { if (window.stop) { window.stop(); } else if (document.execCommand) { document.execCommand('Stop'); }; window.location.hash = '#' + abbr + '-' + $root.getDefaultSubSelectionForVersion(abbr); window.location.reload(); } else { return false; } }">
@@ -40,28 +40,28 @@
 			<div style="display:none" class="settings" data-bind="visible: true, click: function() { settings.showControls(true) }, visible: !settings.showControls()">
 				<span role="button" tabindex="1">
 					<i class="fa fa-cog"></i>
-					Controls
+					設定
 				</span>
 			</div>
 			<!-- /ko -->
 		</nav>
 	</div>
 	<div class="wrapper" id="loading" data-bind="visible: false">
-		<p><i class="fa fa-cog fa-spin"></i> Loading, please wait...</p>
+		<p><i class="fa fa-cog fa-spin"></i> 加載中, 請稍後...</p>
 	</div>
 	<!-- ko if: isMainPage() -->
 	<div class="wrapper" id="main-page" style="display:none" data-bind="visible: true">
 		<h1>
 			<img data-bind="attr: { src: 'icons/Mushroom.png' }" />
-			<span>Welcome to maple.watch!</span>
+			<span>歡迎來到 maple.watch!</span>
 		</h1>
-		<p class="tagline">The website which lets you track your connection to the MapleStory servers without having to open the game to find out if they're online!</p>
+		<p class="tagline">該網站可讓您追蹤與 MapleStory 伺服器的延遲，而無需打開遊戲來找出它們是否在線！</p>
 		<section>
 			<article>
 				<div class="fake-table">
 					<div>
-						<h2>How do I use maple.watch?</h2>
-						<p>Begin by selecting the region of the game you want to check at the top bar of the page or in the list below:</p>
+						<h2>如何使用 maple.watch?</h2>
+						<p>首先在頁面頂部欄或下面的清單中選擇您要檢查的伺服器:</p>
 						<ul data-bind="foreach: versions" class="versions-list">
 							<li>
 								<a href="#" role="button" data-bind="attr: { href: available ? '#' + abbr + '-' + $root.getDefaultSubSelectionForVersion(abbr) : '', title: available ? name : 'Coming Soon!' }, css: { disabled: !available }, click: function() { if (available) { if (window.stop) { window.stop(); } else if (document.execCommand) { document.execCommand('Stop'); }; window.location.hash = '#' + abbr + '-' + $root.getDefaultSubSelectionForVersion(abbr); window.location.reload(); } else { return false; } }">
@@ -69,14 +69,14 @@
 									<span class="short-name" data-bind="text: short"></span>
 								</a>
 								<!-- ko if: !available -->
-								<span class="notice">&mdash; Coming soon</span>
+								<span class="notice">&mdash; 即將推出</span>
 								<!-- /ko -->
 								<!-- ko if: available && !complete -->
-								<span class="notice">&mdash; Partially complete</span>
+								<span class="notice">&mdash; 部分完成</span>
 								<!-- /ko -->
 							</li>
 						</ul>
-						<p>From there you can select the server collection (or <em>world</em>, if you like) you wish to check the status of.</p>
+						<p>你可以從裡面看到任何伺服器跟目前分流狀態。</p>
 					</div>
 					<div class="tutorial">
 							<img src="tutorial/tutorial1.png" alt="Tutorial 1" />
@@ -85,20 +85,20 @@
 				
 			</article>
 			<article>
-				<h2>How is this any different to any of the other status checker websites?</h2>
-				<p>Quite simply: maple.watch tracks <em>your</em> connection to the MapleStory servers, and tells you <em>your</em> ping response from each server.</p>
-				<h3>What's wrong with the other status checking websites?</h3>
-				<p>The other status checking websites are great and you should definitely continue using them, but they all suffer from a few pitfalls which maple.watch sets out to fix:</p>
+				<h2>這與其他狀態檢查網站有何不同？</h2>
+				<p>很簡單 maple.watch 追蹤<em>您</em> 與 MapleStory 伺服器的連接，並告訴您<em>您</em>來自每台伺服器的 ping 回應。</p>
+				<h3>其他狀態檢查網站有問題嗎？</h3>
+				<p>其他狀態檢查網站都很棒，您絕對應該繼續使用它們，但它們都存在一些缺陷，maple.watch 打算修復這些缺陷：</p>
 				<ol class="the-bad">
-					<li><i class="fa fa-times"></i> <strong>They're infrequently updated</strong> &mdash; Some of them only update once every few minutes, which can be enough time for a server to go down and come back up again.</li>
-					<li><i class="fa fa-times"></i> <strong>They're centralised</strong> &mdash; All of the requests made to each server come from <em>their</em> computers, not yours. They don't show your connectivity, they show their own.</li>
+					<li><i class="fa fa-times"></i> <strong>它們很少更新</strong> &mdash;其中一些僅每隔幾分鐘更新一次，這足以讓伺服器停機並再次恢復。</li>
+					<li><i class="fa fa-times"></i> <strong>他們是中心化的</strong> &mdash; 向每個伺服器發出的所有請求都來自 <em>他們的</em> 電腦，不是你的。 它們不會顯示您的連接狀況，而是顯示自己與伺服器的連接狀況。</li>
 				</ol>
-				<h3>So how does maple.watch get around these issues?</h3>
-				<p>maple.watch works completely differently to all the other status checking websites:</p>
+				<h3>那麼 maple.watch 如何解決這些問題呢？</h3>
+				<p>maple.watch 的工作方式與所有其他狀態檢查網站完全不同：</p>
 				<ol class="the-good">
-					<li><i class="fa fa-check"></i> <strong>It's not at all centralised</strong> &mdash; Requests are sent out from <em>your</em> computer, not ours. The responses you see represent whether <em>you</em> are able to connect.</li>
-					<li><i class="fa fa-check"></i> <strong>It's updated instantly</strong> &mdash; As soon as you load each page the requests will be sent to each server you want to see there and then. There's no waiting around.</li>
-					<li><i class="fa fa-check"></i> <strong>It's completely transparent</strong> &mdash; We show you the IP addresses and ports of each server. Heck, we're even <a href="https://github.com/xymu/maple.watch">open source</a>!</li>
+					<li><i class="fa fa-check"></i> <strong>它根本不是中心化的</strong> &mdash; 請求從發出 <em>你的</em> 電腦, 不是我們的. 您看到的回覆代表是否 <em>你</em> 能夠連接。</li>
+					<li><i class="fa fa-check"></i> <strong>馬上就更新了</strong> &mdash; 一旦您加載每個頁面，請求就會被發送到您想要立即查看的每個伺服器。 無需等待。</li>
+					<li><i class="fa fa-check"></i> <strong>它是完全透明的</strong> &mdash; 我們向您展示每台伺服器的 IP 位址和連接埠。 哎呀，我們甚至 <a href="https://github.com/xymu/maple.watch">開放原始碼</a>!</li>
 				</ol>
 			</article>
 		</section>
@@ -108,50 +108,44 @@
 	<div style="display:none" id="controls" class="wrapper" data-bind="visible: settings.showControls()">
 		<section>
 			<div class="info">
-				<h2>Controls</h2>
-				<p>Use these to adjust how the site works.</p>
-				<p>Values are stored as cookies, meaning they'll save for your next visit.</p>
+				<h2>設定</h2>
+				<p>使用它們來調整網站的工作方式。</p>
+				<p>值儲存為 cookie，這表示它們將保存以供您下次造訪。</p>
 			</div>
 			<div class="content">
 				<article>
 					<label>
-						<span>Check Delay Offset <small>(ms)</small></span>
+						<span>檢查延遲偏移 <small>(ms)</small></span>
 						<span class="control">
 							<input type="number" data-bind="value: settings.delay" />
 						</span>
 					</label>
-					<footer>This number (in milliseconds) sets the delay between checking each server. The default value is 100, but you may want to increase this if you notice the ping response slowly increasing between each server.</footer>
+					<footer>該數字（以毫秒為單位）設定檢查每個伺服器之間的延遲。 預設值是 100，但如果您發現每個伺服器之間的 ping 回應緩慢增加，您可能需要增加此值。</footer>
 				</article>
 				<article>
 					<label>
-						<span>Check Timeout <small>(ms)</small></span>
+						<span>檢查超時 <small>(ms)</small></span>
 						<span class="control">
 							<input type="number" data-bind="value: settings.timeout" />
 						</span>
 					</label>
-					<footer>This number (in milliseconds) determines how long we should wait before assuming a server is offline. The higher this is, the greater chance of false positives there will be. Ideally this should be set between 1500 and 10000.</footer>
+					<footer>這個數字（以毫秒為單位）決定了我們在假設伺服器離線之前應該等待多長時間。 該值越高，誤報的可能性就越大。 理想情況下，該值應設定在 1500 到 10000 之間。</footer>
 				</article>
 				<article class="multiple">
 					<label title="Display the IP addresses and Port numbers for each server.">
-						<span>Show IPs and Ports</span>
+						<span>展示IP跟端口</span>
 						<span class="control">
 							<input type="checkbox" data-bind="checked: settings.showIPPort" />
 						</span>
 					</label>
 					<label title="Display the millisecond connection time for each server alongside the status text.">
-						<span>Show Connection Time</span>
+						<span>顯示連線延遲</span>
 						<span class="control">
 							<input type="checkbox" data-bind="checked: settings.showConnection"  />
 						</span>
 					</label>
-					<label title="Allow clicking on each server to refresh it.">
-						<span>Enable Click to Refresh</span>
-						<span class="control">
-							<input type="checkbox" disabled data-bind="checked: settings.clickToRefresh"  />
-						</span>
-					</label>
 					<label>
-						<span>Fix Browser Ping Speed</span>
+						<span>修復瀏覽器 Ping 速度</span>
 						<span class="control">
 							<input type="checkbox" data-bind="checked: settings.fixPing"  />
 						</span>
@@ -163,15 +157,15 @@
 			<span>
 				<button role="button" type="button"  data-bind="click: function() { modifySettings() }">
 					<i class="fa fa-check"></i>
-					Save and Reload
+					儲存並重新載入
 				</button>
 				<button role="button" type="button" class="plain" data-bind="click: function() { defaultSettings() }">
 					<i class="fa fa-history"></i>
-					Use Default
+					使用預設設定
 				</button>
 				<button role="button" type="button" class="plain cancel" data-bind="click: function() { settings.showControls(false) }">
 					<i class="fa fa-times"></i>
-					Close Controls
+					離開設定
 				</button>
 			</span>
 		</footer>
@@ -184,11 +178,11 @@
 			<span data-bind="html: name"></span>
 		</h1>
 		<h2>
-			<small>Selected server:</small>
+			<small>伺服器:</small>
 			<img data-bind="attr: { src: 'icons/' + ( $root.selectedIcon() ) + '.png' }" />
 			<span data-bind="html: $root.subSelection()"></span>
 		</h2>
-		<p>To select a different world, click on its name in the Game Servers sidebar!</p>
+		<p>若要選擇不同的伺服器，請在GameServer做選擇！</p>
 	</div>
 	<!-- ko if: applications.length == 0 -->
 	<div class="wrapper" style="display:none" data-bind="visible: true">
@@ -257,7 +251,7 @@
 						</dl>
 					</div>
 					<div class="status" data-bind="css: { ok: +time() > 0 && +time() < 300, slow: +time() >= 300, timeout: status() == 'timeout' }">
-						<div class="text" data-bind="text: status() == 'timeout' ? 'No Response' : time() > 0 ? (time() > $root.settings.pingOffset() > 0 ? time() - $root.settings.pingOffset() : 0) < 300 ? 'Online!' : 'Online! Slow...' : 'Checking...'"></div>
+						<div class="text" data-bind="text: status() == 'timeout' ? '沒有回應...估計寄了' : time() > 0 ? (time() > $root.settings.pingOffset() > 0 ? time() - $root.settings.pingOffset() : 0) < 300 ? '線上!' : '線上! 可是延遲...' : '檢查中...'"></div>
 						<div class="time" data-bind="css: { hidden: !$root.settings.showConnection() }, text: time() !== '' && status() != 'timeout' ? (time() > $root.settings.pingOffset() > 0 ? time() - $root.settings.pingOffset() : 0) + 'ms' : ''"></div>
 					</div>
 				</article>
@@ -270,7 +264,7 @@
 	<!-- /ko -->
 	<!-- /ko -->
 	<div class="wrapper">
-		<footer id="footer">&copy; Copyright maple.watch 2015<br>All Rights Reserved</footer>
+		<footer id="footer">&copy; Copyright maple.watch 2015<br>繁體中文翻譯 by <a href="https://github.com/Waisz/">Waisz</a><br>Traditional Chinese translation by <a href="https://github.com/Waisz/">Waisz</a><br>All Rights Reserved</footer>
 	</div>
 	<script type="text/javascript" src="moment.min.js"></script>
 	<script type="text/javascript" src="knockout.min.js"></script>
