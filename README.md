@@ -10,4 +10,4 @@ Other servers will be added if server information is found or contributed.
 
 =======
 
-See it live [here.](https://xymu.github.io/maple.watch)
+See it live [here.](https://waisz.github.io/maple.watch)
