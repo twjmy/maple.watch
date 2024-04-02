@@ -6014,7 +6014,7 @@ var servers = {
 	TMS: {
         Login: [{
             icon: "Mushroom_16.png",
-            name: "Login 1",
+            name: "登入大廳1 ",
             address: "202.80.104.24",
             port: "8484",
             interval: 1500,
@@ -6024,7 +6024,7 @@ var servers = {
         },
         {
             icon: "Mushroom_16.png",
-            name: "Login 2",
+            name: "登入大廳 2",
             address: "202.80.104.25",
             port: "8484",
             interval: 1500,
@@ -6034,7 +6034,7 @@ var servers = {
         },
 {
             icon: "Mushroom_16.png",
-            name: "Login 3",
+            name: "登入大廳 3",
             address: "202.80.104.26",
             port: "8484",
             interval: 1500,
@@ -6044,7 +6044,7 @@ var servers = {
         },
 {
             icon: "Mushroom_16.png",
-            name: "Login 4",
+            name: "登入大廳 4",
             address: "202.80.104.27",
             port: "8484",
             interval: 1500,
@@ -6054,7 +6054,7 @@ var servers = {
         },
         {
             icon: "Mushroom_16.png",
-            name: "Login 5",
+            name: "登入大廳 5",
             address: "202.80.104.28",
             port: "8484",
             interval: 1500,
@@ -6064,7 +6064,7 @@ var servers = {
         },
 {
             icon: "Mushroom_16.png",
-            name: "Login 6",
+            name: "登入大廳 6",
             address: "202.80.104.29",
             port: "8484",
             interval: 1500,
