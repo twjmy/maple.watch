@@ -156,8 +156,8 @@ var PingModel = function(servers) {
 
 var GameServer = function(version, timeOffset, icons, servers) {
     return {
-        name: "Game Servers",
-        description: "These are the MapleStory " + version + " game servers.",
+        name: "遊戲伺服器",
+        description: "這是楓之谷 " + version + " 伺服器列表",
         selectedServers: ko.observable(loadingArr),
         icons: icons,
         timeOffset: timeOffset,
@@ -8793,8 +8793,8 @@ var checker = {
                     servers.EMS.Reboot,
                 ]),
                 {
-                    name: "Internal Sites",
-                    description: "These are pages which are hosted on Nexon's servers.",
+                    name: "內部網頁",
+                    description: "這些網頁託管在 Nexon 的伺服器上",
                     icons: [{
                             icon: "Nexon.png",
                             name: "nexon.net",
@@ -8810,8 +8810,8 @@ var checker = {
                     selectedServers: ko.observable(loadingArr)
                 },
                 {
-                    name: "External Sites",
-                    description: "These are pages which are hosted on external servers.",
+                    name: "外部網頁",
+                    description: "這些網頁託管在外部伺服器上",
                     selectedServers: ko.observable(loadingArr),
                     icons: [],
                     content: function() {
@@ -8888,7 +8888,7 @@ var checker = {
                 ]),
                 {
                     name: "Websites",
-                    description: "These are pages related to Nexon America's internal and external servers.",
+                    description: "這邊是與 Nexon America 的內部和外部伺服器相關的網頁",
                     selectedServers: ko.observable(loadingArr),
                     icons: [{
                         icon: "Nexon.png",
@@ -9317,7 +9317,7 @@ var checker = {
         timeout: ko.observable(readCookie("Timeout") ? readCookie("Timeout") : 5000),
         showControls: ko.observable(false)
     },
-    currentTime: ko.observable('<span><i class="fa fa-cog fa-spin"></i> Checking server time...</span>')
+    currentTime: ko.observable('<span><i class="fa fa-cog fa-spin"></i> 正在檢查伺服器時間...</span>')
 };
 
 checker.subSelection.subscribe(function(newValue) {
@@ -9422,15 +9422,15 @@ function UpdateSelectedServers(parent, index, name) {
         window.clearInterval(loadingTimers[index]);
     }
 
-    if (parent.name == "Game Servers" && !clockTicking) {
+    if (parent.name == "遊戲伺服器" && !clockTicking) {
         clockTicking = true;
         setInterval(function() {
             var d = new Date(),
                 o = d.getTimezoneOffset() / 60;
 
             d.setHours(d.getHours() + o + parent.timeOffset);
-            checker.currentTime('<span><i class="fa fa-clock-o"></i> Server Time</span> ' + moment(d).format('h:mm:ss') + ' <span>' + moment(d).format('A') + '</span>');
-        }, 1000);
+            checker.currentTime('<span><i class="fa fa-clock-o"></i> 伺服器時間</span> ' + moment(d).format('h:mm:ss') + ' <span>' + moment(d).format('A') + '</span>');
+        }, 1000 - new Date()%1000);
     }
 
     parent.selectedServers(loadingArr);

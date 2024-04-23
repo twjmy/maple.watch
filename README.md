@@ -1,13 +1,4 @@
 # maple.watch
-Server status and latency check for MapleStory
+檢查楓之谷各伺服器狀態與延遲
 
-This website is a copy of the original [maple.watch](https://github.com/450/maple.watch) with updated websites and server IP addresses.
-
-GMS and EMS are most likely to be updated.
-CMS and CMST server information was contributed by HikariCalyx.
-MapleSEA information was contributed by Northbadge.
-Other servers will be added if server information is found or contributed.
-
-=======
-
-See it live [here.](https://xymu.github.io/maple.watch)
+此網站是 @xymu / [maple.watch](https://github.com/450/maple.watch) 的翻譯版本。
