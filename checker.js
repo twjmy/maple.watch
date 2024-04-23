@@ -9424,19 +9424,22 @@ function UpdateSelectedServers(parent, index, name) {
 
     if (parent.name == "遊戲伺服器" && !clockTicking) {
         clockTicking = true;
-        setInterval(function() {
-            var d = new Date(),
-                o = d.getTimezoneOffset() / 60;
+        setTimeout(function() {
+            setInterval(function() {
+                var d = new Date(),
+                    o = d.getTimezoneOffset() / 60;
 
-            d.setHours(d.getHours() + o + parent.timeOffset);
+                d.setHours(d.getHours() + o + parent.timeOffset);
 
-            const fillZero = i => i < 10 ? '0' + i : i.toString();  // add zero in front of numbers < 10
-            let Hms = [fillZero(d.getHours()), fillZero(d.getMinutes()), fillZero(d.getSeconds())];
+                const fillZero = i => i < 10 ? '0' + i : i.toString();  // add zero in front of numbers < 10
+                let Hms = [fillZero(d.getHours()), fillZero(d.getMinutes()), fillZero(d.getSeconds())];
 
-            checker.currentTime(`
-                <span><i class="fa fa-clock-o"></i> 伺服器時間</span> ${Hms[0]}:${Hms[1]}:${Hms[2]}
-            `);
-        }, 1000);
+                checker.currentTime(`
+                    <span><i class="fa fa-clock-o"></i> 伺服器時間</span> ${Hms[0]}:${Hms[1]}:${Hms[2]}
+                `);
+            }, 1000);
+        }, 1000 - new Date() % 1000);
+        
     }
 
     parent.selectedServers(loadingArr);
