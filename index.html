@@ -233,7 +233,7 @@
 				<!-- /ko -->
 			</div>
 			<!-- ko if: name == "遊戲伺服器" -->
-			<div class="server-time" data-bind="html: checker.currentTime(), 1000-new Date()%1000"></div>
+			<div class="server-time" data-bind="html: checker.currentTime(), 1000"></div>
 			<!-- /ko -->
 			<div class="servers" data-bind="foreach: selectedServers()">
 				<!-- ko if: loading == true -->

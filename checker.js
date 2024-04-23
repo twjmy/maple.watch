@@ -9434,9 +9434,9 @@ function UpdateSelectedServers(parent, index, name) {
             let Hms = [fillZero(d.getHours()), fillZero(d.getMinutes()), fillZero(d.getSeconds())];
 
             checker.currentTime(`
-                <span><i class="fa fa-clock-o"></i> 伺服器時間</span> ${Hms[0]}:${Hms[1]}:${Hms[2]}
+                <span><i class="fa fa-clock-o"></i> 伺服器時間</span> ${Hms[0]}:${Hms[1]}:${Hms[2]}(${d.getTime()})
             `);
-        }, 1000 - new Date()%1000);
+        }, 1000);
     }
 
     parent.selectedServers(loadingArr);
