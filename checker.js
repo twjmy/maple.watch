@@ -9479,7 +9479,7 @@ function GetDefaultSubSelectionForVersion(version) {
         case 'JMS':
             return 'Login';
         case 'KMS':
-            return '스카니아';
+            return 'Scania';
         case 'CMS':
             return 'Login';
         case 'MSEA':
