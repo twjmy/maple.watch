@@ -484,7 +484,7 @@ div.info {
 	box-shadow: 5px 0 4px 0px #9E9E9E;
 	box-sizing: border-box;
 	color: #fff;
-	height: 100%;
+	height: fit-content;
 	padding: 10px;
 	position: absolute;
 	top: 0;
